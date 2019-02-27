@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>工作台</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="icon" href="../img/web/web.ico"/>
+    <link rel="stylesheet" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../css/app.css"/>
+<body ontouchstart="">
+
+<div class="layui-fluid">
+
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">常用快捷入口</div>
+                <div class="layui-card-body">
+                    <ul class="layui-row layui-col-space10 vip-entry-box">
+                       <!--<li class="layui-col-xs2" vip-href="btn.html" vip-title="按钮" title="按钮" >
+                           <i class="vip-icon">&#xe66d;</i>
+                           <p class="layui-elip">按钮</p>
+                       </li>
+                       <li class="layui-col-xs2" vip-href="table-tree.html" vip-title="树结构表" title="树结构表">
+                           <i class="vip-icon">&#xe6fc;</i>
+                           <p class="layui-elip">树结构表</p>
+                       </li>
+                       <li class="layui-col-xs2" vip-href="load-animation.html" vip-title="加载动画" title="加载动画">
+                           <i class="vip-icon">&#xe68a;</i>
+                           <p class="layui-elip">加载动画</p>
+                       </li>
+                       <li class="layui-col-xs2" vip-href="login.html" vip-title="登录页" title="登录页">
+                           <i class="vip-icon">&#xe612;</i>
+                           <p class="layui-elip">登录页</p>
+                       </li>
+                       <li class="layui-col-xs2" vip-href="alert.html" vip-title="弹窗" title="弹窗">
+                           <i class="vip-icon">&#xe709;</i>
+                           <p class="layui-elip">弹窗</p>
+                       </li>
+                       <li class="layui-col-xs2" vip-href="chart.html" vip-title="ECharts" title="ECharts">
+                           <i class="vip-icon">&#xe66c;</i>
+                           <p class="layui-elip">ECharts</p>
+                       </li>
+                       <li class="layui-col-xs2" vip-href="msg.html" vip-vip-title="通知" vip-title="通知">
+                           <i class="vip-icon">&#xe642;</i>
+                           <p class="layui-elip">通知</p>
+                       </li>
+                       <li class="layui-col-xs2" vip-href="icons.html" vip-vip-title="图标" vip-title="图标">
+                           <i class="vip-icon">&#xe767;</i>
+                           <p class="layui-elip">图标</p>
+                       </li>
+                       <li class="layui-col-xs2" vip-href="upload.html" vip-title="文件上传" title="文件上传">
+                           <i class="vip-icon">&#xe6ba;</i>
+                           <p class="layui-elip">文件上传</p>
+                       </li>
+                       <li class="layui-col-xs2" vip-href="calendar.html" vip-title="日历" title="日历">
+                           <i class="vip-icon">&#xe67b;</i>
+                           <p class="layui-elip">日历</p>
+                       </li>
+                       <li class="layui-col-xs2" vip-href="lock.html" vip-title="锁屏" title="锁屏">
+                           <i class="vip-icon">&#xe669;</i>
+                           <p class="layui-elip">锁屏</p>
+                       </li>
+                       <li class="layui-col-xs2" title="未开放">
+                           <i class="vip-icon">&#xe61e;</i>
+                           <p class="layui-elip">更多</p>
+                       </li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md3">
+            <div class="layui-card">
+                <div class="layui-card-header">待办事项</div>
+                <div class="layui-card-body">
+                    <ul class="layui-row layui-col-space10 vip-thing-box">
+                        <!--<li class="layui-col-xs6" vip-href="btn.html" vip-title="待发货" title="待发货">
+                            <div class="vip-thing-btn">
+                                <h5 class="layui-elip">待发货</h5>
+                                <p class="layui-elip">50</p>
+                            </div>
+                        </li>
+                        <li class="layui-col-xs6" vip-href="btn.html" vip-title="待发货" title="待发货">
+                            <div class="vip-thing-btn">
+                                <h5 class="layui-elip">待发货</h5>
+                                <p class="layui-elip">50</p>
+                            </div>
+                        </li>
+                        <li class="layui-col-xs6" vip-href="btn.html" vip-title="待发货" title="待发货">
+                            <div class="vip-thing-btn">
+                                <h5 class="layui-elip">待发货</h5>
+                                <p class="layui-elip">50</p>
+                            </div>
+                        </li>
+                        <li class="layui-col-xs6" vip-href="btn.html" vip-title="待发货" title="待发货">
+                            <div class="vip-thing-btn">
+                                <h5 class="layui-elip">待发货</h5>
+                                <p class="layui-elip">50</p>
+                            </div>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md3">
+
+            <div class="layui-card">
+                <div class="layui-card-header">公告</div>
+                <div class="layui-card-body ">
+                    <ul class="layui-row layui-col-space10 vip-notice-box">
+                        <!--<li class="layui-elip"><a href="javascript:;"><span class="layui-badge">严重</span>这里有个很重要的事情需要告诉你，你可以点击这里查看详细公告</a></li>
+                        <li class="layui-elip"><a href="javascript:;"><span class="layui-badge layui-bg-orange">重要</span>这里有个很重要的事情需要告诉你，你可以点击这里查看详细公告</a></li>
+                        <li class="layui-elip"><a href="javascript:;"><span class="layui-badge layui-bg-black">一般</span>这里有个很重要的事情需要告诉你，你可以点击这里查看详细公告</a></li>
+                        <li class="layui-elip"><a href="javascript:;"><span class="layui-badge layui-bg-gray">忽略</span>这里有个很重要的事情需要告诉你，你可以点击这里查看详细公告</a></li>
+                        <li class="layui-elip"><a href="javascript:;"><span class="layui-badge layui-bg-green">完成</span>这里有个很重要的事情需要告诉你，你可以点击这里查看详细公告</a></li>-->
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md2 layui-col-sm4 layui-col-xs6">
+            <div class="vip-card vip-box-shadow">
+                <a class="vip-card-content" vip-title="注册量" vip-href="btn.html">
+                    <p class="layui-elip workbench-register">-</p>
+                    <div>注册量</div>
+                </a>
+            </div>
+        </div>
+        <div class="layui-col-md2 layui-col-sm4 layui-col-xs6">
+            <div class="vip-card vip-box-shadow">
+                <a class="vip-card-content" vip-title="日活跃" vip-href="btn.html">
+                    <p class="layui-elip workbench-day">-</p>
+                    <div>日活跃</div>
+                </a>
+            </div>
+        </div>
+        <div class="layui-col-md2 layui-col-sm4 layui-col-xs6">
+            <div class="vip-card vip-box-shadow">
+                <a class="vip-card-content" vip-title="周活跃" vip-href="btn.html">
+                    <p class="layui-elip workbench-week">-</p>
+                    <div>周活跃</div>
+                </a>
+            </div>
+        </div>
+        <div class="layui-col-md2 layui-col-sm4 layui-col-xs6">
+            <div class="vip-card vip-box-shadow">
+                <a class="vip-card-content" vip-title="月活跃" vip-href="btn.html">
+                    <p class="layui-elip workbench-month">-</p>
+                    <div>月活跃</div>
+                </a>
+            </div>
+        </div>
+        <div class="layui-col-md2 layui-col-sm4 layui-col-xs6">
+            <div class="vip-card vip-box-shadow">
+                <a class="vip-card-content" vip-title="会员量" vip-href="btn.html">
+                    <p class="layui-elip workbench-user">-</p>
+                    <div>会员量</div>
+                </a>
+            </div>
+        </div>
+        <div class="layui-col-md2 layui-col-sm4 layui-col-xs6">
+            <div class="vip-card vip-box-shadow">
+                <a class="vip-card-content" vip-title="订单量" vip-href="btn.html">
+                    <p class="layui-elip workbench-order">-</p>
+                    <div>订单量</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+
+            <div class="layui-card">
+                <div class="layui-card-header">最新用户</div>
+                <div class="layui-card-body">
+                    <ul class="layui-row layui-col-space15 vip-user-box">
+                        <!--<li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <span class="layui-badge">V1</span>
+                                <img src="../img/user-photos/1.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <img src="../img/user-photos/3.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <span class="layui-badge">V2</span>
+                                <img src="../img/user-photos/2.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <img src="../img/user-photos/3.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <img src="../img/user-photos/4.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <img src="../img/user-photos/1.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <span class="layui-badge">V1</span>
+                                <img src="../img/user-photos/4.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <img src="../img/user-photos/1.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <img src="../img/user-photos/2.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <span class="layui-badge">V1</span>
+                                <img src="../img/user-photos/2.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <img src="../img/user-photos/1.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <img src="../img/user-photos/3.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <img src="../img/user-photos/2.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <img src="../img/user-photos/2.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <span class="layui-badge">V3</span>
+                                <img src="../img/user-photos/4.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <img src="../img/user-photos/3.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <span class="layui-badge">V1</span>
+                                <img src="../img/user-photos/1.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <img src="../img/user-photos/2.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+                            <a href="#">
+                                <img src="../img/user-photos/1.png" alt="user" />
+                                <p class="layui-elip" title="昵称-XXX">昵称-XXX</p>
+                            </a>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="layui-row layui-col-space15">
+
+        <div class="layui-col-md8">
+            <div class="layui-card">
+                <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">今日热帖</li>
+                        <li>用户留言</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                            <div id="vipHotPostTable" lay-filter="table"></div>
+                        </div>
+                        <div class="layui-tab-item">
+                            <div id="vipMessageTable" lay-filter="table"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">标签</div>
+                <div class="layui-card-body">
+                    <div class="layui-btn-container">
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-fluid" vip-href="btn.html" vip-title="礼物"><i class="vip-icon">&#xe665;</i> 礼物</button>
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-fluid" vip-href="btn.html" vip-title="收藏"><i class="vip-icon">&#xe667;</i> 收藏</button>
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-fluid" vip-href="btn.html" vip-title="商店"><i class="vip-icon">&#xe673;</i> 商店</button>
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-fluid" vip-href="btn.html" vip-title="更多"><i class="vip-icon">&#xe668;</i> 更多</button>
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-fluid" vip-href="btn.html" vip-title="收藏"><i class="vip-icon">&#xe667;</i> 收藏</button>
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-fluid" vip-href="btn.html" vip-title="商店"><i class="vip-icon">&#xe673;</i> 商店</button>
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-fluid" vip-href="btn.html" vip-title="更多"><i class="vip-icon">&#xe668;</i> 更多</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- 常用快捷入口 TPL -->
+<script type="text/html" id="entryTpl">
+    {{#  layui.each(d.list, function(index, item){ }}
+    {{# if(index>11){return ;} }}
+    <li class="layui-col-xs4 layui-col-sm3 layui-col-md2" vip-href="{{ item.href }}" vip-title="{{ item.title }}" title="{{ item.title }}" >
+        <i class="vip-icon">{{ item.icon }}</i>
+        <p class="layui-elip">{{ item.title }}</p>
+    </li>
+    {{# }) }}
+</script>
+
+<!-- 待办事项 TPL -->
+<script type="text/html" id="thingTpl">
+    {{#  layui.each(d.list, function(index, item){ }}
+    {{# if(index>3){return ;} }}
+    <li class="layui-col-xs6" vip-href="{{ item.href }}" vip-title="{{ item.title }}" title="{{ item.title }}">
+        <div class="vip-thing-btn">
+            <h5 class="layui-elip">{{ item.title }}</h5>
+            <p class="layui-elip">{{ item.num }}</p>
+        </div>
+    </li>
+    {{# }) }}
+</script>
+
+<!-- 公告 TPL -->
+<script type="text/html" id="noticeTpl">
+    {{# layui.each(d.list, function(index, item){ }}
+    {{# if(index>4){return ;} }}
+    <li class="layui-elip"><a class="vip-alert-notice-list" href="javascript:;" data-id="{{ item.id }}" data-title="{{ item.title }}" title="{{ item.title }}">
+        {{# if(item.type == 1){ }}
+        <span class="layui-badge layui-elip">严重</span>
+        {{# }else if(item.type == 2){ }}
+        <span class="layui-badge layui-bg-orange layui-elip">重要</span>
+        {{# }else if(item.type == 3){ }}
+        <span class="layui-badge layui-bg-black layui-elip">一般</span>
+        {{# }else if(item.type == 4){ }}
+        <span class="layui-badge layui-bg-gray layui-elip">忽略</span>
+        {{# }else if(item.type == 5){ }}
+        <span class="layui-badge layui-bg-green layui-elip">完成</span>
+        {{# }else{ }}
+        <span class="layui-badge layui-bg-gray layui-elip">···</span>
+        {{# } }}
+        {{ item.title }}</a></li>
+    {{# }) }}
+</script>
+
+<!-- 用户 TPL -->
+<script type="text/html" id="userTpl">
+    {{# layui.each(d.list, function(index, item){ }}
+    <li class="layui-col-md1 layui-col-sm3 layui-col-xs4">
+        <a vip-href="{{ item.href }}" vip-title="{{ item.nickname }}" title="{{ item.nickname }}" href="javascript:;">
+            {{# if(item.level){ }}
+            <span class="layui-badge">V{{ item.level }}</span>
+            {{# } }}
+            <img src="{{ item.avatar }}" alt="{{ item.nickname }}" />
+            <p class="layui-elip" title="{{ item.nickname }}">{{ item.nickname }}</p>
+        </a>
+    </li>
+    {{# }) }}
+</script>
+
+<!--  TPL -->
+<script type="text/html"></script>
+
+<!-- 今日热帖 TPL -->
+<script type="text/html" id="hotPostTpl">
+    <button class="layui-btn layui-btn-xs layui-bg-green" lay-event="setTop">置顶</button>
+    <button class="layui-btn layui-btn-xs layui-bg-red" lay-event="setEnd">结帖</button>
+</script>
+
+<!-- 用户留言 TPL -->
+<script type="text/html" id="messageTpl">
+    <button class="layui-btn layui-btn-xs layui-bg-blue" lay-event="reply">回复</button>
+</script>
+
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript">
+    layui.config({base: '../js/'}).use(['app','table','layer','element'],function(){
+        var $ = layui.$
+        ,app = layui.app
+        ,table = layui.table
+        ,layer = layui.layer
+        ,element = layui.element;
+
+        // 常用快捷入口
+        app.entry({
+            url: '../json/demo-entry.json'
+            ,where: {}
+            ,tpl: '#entryTpl'
+            ,el: '.vip-entry-box'
+            ,done: function(){
+                //console.log('entry is done');
+            }
+        });
+
+        // 待办事项
+        app.thing({
+            url: '../json/demo-thing.json'
+            ,where: {}
+            ,tpl: '#thingTpl'
+            ,el: '.vip-thing-box'
+            ,done: function(){
+                //console.log('thing is done');
+            }
+        });
+
+        // 公告 1.3.0
+        app.noticePanel({
+            url: '../json/demo-notice-panel.json'
+            //,where: {}
+            ,tpl: '#noticeTpl'
+            ,el: '.vip-notice-box'
+            ,done: function(){
+                //console.log('noticePanel is done');
+            }
+        });
+
+        // 公告内容 1.3.0
+        $(document).on('click','.vip-alert-notice-list',function(){
+            var id = $(this).data('id');
+            $.post('../json/demo-notice-panel-detail.json',{id:id},function(res){
+                if(res.code == 0){
+                    app.notice(res.data.content,function(){
+                        location.href = res.data.href;
+                    });
+                }else{
+                    app.msg('出错了');
+                }
+            });
+        });
+
+        // 列表赋值 1.3.0
+        $.post('../json/demo-workbench-count.json',{},function(res){
+            if(res.code == 0){
+                app.val(
+                    ['.workbench-register','.workbench-day','.workbench-week','.workbench-month','.workbench-user','.workbench-order']
+                    ,[res.data.register,res.data.day,res.data.week,res.data.month,res.data.user,res.data.order]
+                    //,['html','html','html','html','html','html']
+                )
+            }else{
+                app.msg('接口数据出错');
+            }
+        });
+
+        // 最新用户 1.3.0
+        app.user({
+            url: '../json/demo-user.json'
+            //,where: {}
+            ,tpl: '#userTpl'
+            ,el: '.vip-user-box'
+            ,done: function(){
+                //console.log('user is done');
+            }
+        });
+
+        // 子窗口点击按钮跳转页面:方式二
+        $(document).on('click','[vip-href]',function(){
+            parent.appHref(this)
+        });
+
+        // 今日热帖 1.3.0
+        table.render({
+            elem: '#vipHotPostTable'
+            ,id: 'hot-post-table'
+            ,url: '../json/demo-hot-post.json'  // 数据接口
+            ,page: true                         // 开启分页
+            ,loading: true                      // 开启loading
+            ,cellMinWidth: 80                   // 每列最小宽度
+            ,limits: [15,30,50]                 // 每页条数的选择项
+            ,limit: 15                          // 默认每页条数
+            ,cols: [[                           // 表头
+                {field: 'id', title:'ID', sort:true, width:60}
+                ,{field: 'title', title: '标题'}
+                ,{field: 'author', title: '作者', width:100}
+                ,{field: 'comment', title: '讨论量', width:75}
+                ,{field: 'clicks', title: '点击量', width:75}
+                ,{title: '操作', fixed: 'right',width:115,align:'center', templet:'#hotPostTpl'}
+            ]]
+        });
+
+        // 用户留言 1.3.0
+        table.render({
+            elem: '#vipMessageTable'
+            ,id: 'message-table'
+            ,url: '../json/demo-message.json'   // 数据接口
+            ,page: true                         // 开启分页
+            ,loading: true                      // 开启loading
+            ,cellMinWidth: 80                   // 每列最小宽度
+            ,limits: [15,30,50]                 // 每页条数的选择项
+            ,limit: 15                          // 默认每页条数
+            ,cols: [[                           // 表头
+                {field: 'id', title:'ID', sort:true, width:60}
+                ,{field: 'title', title: '标题'}
+                ,{field: 'author', title: '用户', width:100}
+                ,{title: '操作', fixed: 'right',width:80,align:'center', templet:'#messageTpl'}
+            ]]
+        });
+
+        // 监听工具条
+        table.on('tool(table)', function(obj){  // 注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+            var data = obj.data;                // 获得当前行数据
+            var layEvent = obj.event;           // 获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+            var tr = obj.tr;                    // 获得当前行 tr 的DOM对象
+
+            if(layEvent === 'setTop'){          // 置顶
+                layer.confirm('确认置顶?', function(index){
+                    layer.close(index);
+                });
+            } else if(layEvent === 'setEnd'){   // 结帖
+                layer.confirm('确认结帖?', function(index){
+                    layer.close(index);
+                });
+            } else if(layEvent === 'reply'){    // 回复
+                layer.prompt({title: '回复内容', formType: 2}, function(text, index){
+                    layer.close(index);
+                    layer.msg('回复内容：'+text);
+                });
+            }
+        });
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>仪表板</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="icon" href="../img/web/web.ico"/>
+    <link rel="stylesheet" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../css/app.css"/>
+<body ontouchstart="">
+
+<div class="layui-fluid">
+
+    <div class="layui-row layui-col-space15 vip-dashboard-count">
+        <!--<div class="layui-col-md3 layui-col-sm6 layui-col-xs6">
+            <div class="vip-card">
+                <a class="vip-card-content">
+                    <p class="layui-elip">198,009</p>
+                    <div class="layui-elip">注册量</div>
+                </a>
+            </div>
+        </div>
+        <div class="layui-col-md3 layui-col-sm6 layui-col-xs6">
+            <div class="vip-card">
+                <a class="vip-card-content">
+                    <p class="text-success layui-elip">198</p>
+                    <div class="layui-elip">日活跃</div>
+                </a>
+            </div>
+        </div>
+        <div class="layui-col-md3 layui-col-sm6 layui-col-xs6">
+            <div class="vip-card">
+                <a class="vip-card-content">
+                    <p class="layui-elip">1,980</p>
+                    <div class="layui-elip">周活跃</div>
+                </a>
+            </div>
+        </div>
+        <div class="layui-col-md3 layui-col-sm6 layui-col-xs6">
+            <div class="vip-card">
+                <a class="vip-card-content vip-box-shadow" vip-title="工作台" vip-href="workbench.html" >
+                    <div>工作台</div>
+                    <i class="vip-icon">&#xe765;</i>
+                </a>
+            </div>
+        </div>-->
+    </div>
+
+    <div class="layui-row layui-col-space15 vip-dashboard-count-2">
+        <!--<div class="layui-col-md2 layui-col-sm4 layui-col-xs6">
+            <div class="vip-chart bg-light">
+                <div class="vip-chart-content">
+                    <h5 class="layui-elip">总会员数</h5>
+                    <h2 class="layui-elip">198,009</h2>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md2 layui-col-sm4 layui-col-xs6">
+            <div class="vip-chart bg-light">
+                <div class="vip-chart-content">
+                    <h5 class="layui-elip">今日注册数</h5>
+                    <h2 class="layui-elip">1,009</h2>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md2 layui-col-sm4 layui-col-xs6">
+            <div class="vip-chart bg-light">
+                <div class="vip-chart-content">
+                    <h5 class="layui-elip">今日登录量</h5>
+                    <h2 class="layui-elip">2,011</h2>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md2 layui-col-sm4 layui-col-xs6">
+            <div class="vip-chart bg-light">
+                <div class="vip-chart-content">
+                    <h5 class="layui-elip">近七日注册量</h5>
+                    <h2 class="layui-elip">5,000</h2>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md2 layui-col-sm4 layui-col-xs6">
+            <div class="vip-chart bg-light">
+                <div class="vip-chart-content">
+                    <h5 class="layui-elip">近七日登录量</h5>
+                    <h2 class="layui-elip">6,009</h2>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md2 layui-col-sm4 layui-col-xs6">
+            <div class="vip-chart bg-light">
+                <div class="vip-chart-content">
+                    <h5 class="layui-elip">订单总额</h5>
+                    <h2 class="layui-elip">8,000</h2>
+                </div>
+            </div>
+        </div>-->
+    </div>
+
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md3">
+            <div class="vip-chart bg-info">
+                <div class="vip-chart-content">
+                    <h5>本日访问量</h5>
+                    <h2 class="layui-elip">198,009</h2>
+                    <div id="sparkline1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md3">
+            <div class="vip-chart bg-dark">
+                <div class="vip-chart-content">
+                    <h5>本周访问量</h5>
+                    <h2 class="layui-elip">198,009</h2>
+                    <div id="sparkline2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md3">
+            <div class="vip-chart bg-mint">
+                <div class="vip-chart-content">
+                    <h5>本月访问量</h5>
+                    <h2 class="layui-elip">198,009</h2>
+                    <div id="sparkline3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md3">
+            <div class="vip-chart bg-success">
+                <div class="vip-chart-content">
+                    <h5>平均停留时间</h5>
+                    <h2 class="layui-elip">00:06:40</h2>
+                    <div id="sparkline4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md8">
+            <div class="layui-card">
+                <div class="layui-card-header">访问量/收益</div>
+                <div class="layui-card-body"><div class="vip-demo-max-height-box" id="chart-profit"></div></div>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">浏览器访问对比</div>
+                <div class="layui-card-body">
+                    <div class="vip-demo-max-height-box" id="chart-cake"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md6">
+
+            <div class="layui-card">
+                <div class="layui-card-header">CPU使用率</div>
+                <div class="layui-card-body">
+                    <h2>50%</h2>
+                    <div class="layui-progress">
+                        <div class="layui-progress-bar" lay-percent="50%"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="layui-col-md6">
+
+            <div class="layui-card">
+                <div class="layui-card-header">GPU使用率</div>
+                <div class="layui-card-body">
+                    <h2>75%</h2>
+                    <div class="layui-progress">
+                        <div class="layui-progress-bar layui-bg-orange" lay-percent="75%"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">服务器信息</div>
+                <div class="layui-card-body">
+                    <table class="layui-table">
+                        <tr>
+                            <td>域名</td>
+                            <td>www.vip-admin.com</td>
+                            <td>物理路径</td>
+                            <td>/var/www/html</td>
+                        </tr>
+                        <tr>
+                            <td>操作系统</td>
+                            <td>Linux</td>
+                            <td>解译引擎</td>
+                            <td>Apache/2.2.15 (CentOS)</td>
+                        </tr>
+                        <tr>
+                            <td>语言</td>
+                            <td>zh-CN,zh;q=0.9</td>
+                            <td>端口</td>
+                            <td>80</td>
+                        </tr>
+                        <tr>
+                            <td>主机名</td>
+                            <td>127.0.0.1</td>
+                            <td>名称</td>
+                            <td>vip-admin-Template</td>
+                        </tr>
+                        <tr>
+                            <td>服务器标识</td>
+                            <td colspan="3">Linux ebs-56702 2.6.32-642.6.2.el6.x86_64 #1 SMP Wed Oct 26 06:52:09 UTC 2016 x86_64</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">版本说明</div>
+                <div class="layui-card-body">
+                    <table class="layui-table" lay-size="sm">
+                        <tbody>
+                        <tr>
+                            <td>版本号</td>
+                            <td class="vip-version">x.x.x</td>
+                        </tr>
+                        <tr>
+                            <td>基于框架</td>
+                            <td class="layui-version">-</td>
+                        </tr>
+                        <tr>
+                            <td>授权渠道</td>
+                            <td>
+                                <a class="layui-btn layui-btn-xs" href="https://www.vip-admin.com/product/8.html" target="_blank" rel="noopener noreferrer">前往授权</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">开源版说明</div>
+                <div class="layui-card-body">
+                    <ol class="pad-lft">
+                        <li>1.所有源码(未压缩、带注释版本)</li>
+                        <li>2.不可去除相关标识信息</li>
+                        <li>3.适用于个人学习使用</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">联系信息</div>
+                <div class="layui-card-body">
+                    <p>博客: <a target="_blank" href="http://blog.vip-admin.com/">blog.vip-admin.com</a></p>
+                    <p>邮箱: onceTu@outlook.com</p>
+                    <p>技术交流群: <a href="http://qm.qq.com/cgi-bin/qm/qr?k=MiukfRG3Tjy_4R4_XN1i6fAzOEW_rjur" class="layui-btn layui-btn-xs" target="_blank">加入</a></p>
+                    <p>技术交流一群: <a href="http://qm.qq.com/cgi-bin/qm/qr?k=inuXySoWClbQhkCe_DyQADATjlqJeVDP" class="layui-btn layui-btn-xs" target="_blank">加入</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 统计.1 TPL -->
+<script type="text/html" id="countTpl">
+    {{# layui.each(d.list, function(index, item){ }}
+    {{# if(item.type == 1){ }}
+    <div class="layui-col-md3 layui-col-sm6 layui-col-xs6">
+        <div class="vip-card">
+            <a class="vip-card-content">
+                <p class="layui-elip">{{ item.count }}</p>
+                <div class="layui-elip">{{ item.title }}</div>
+            </a>
+        </div>
+    </div>
+    {{# }else if(item.type == 2){ }}
+    <div class="layui-col-md3 layui-col-sm6 layui-col-xs6">
+        <div class="vip-panel">
+            <div class="vip-panel-title bg-info"></div>
+            <div class="vip-panel-body">
+                <div class="vip-panel-body-img-box">
+                    <img src="{{ item.img }}"/>
+                    <p>{{ item.nickname }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{# } }}
+    {{# }) }}
+    <div class="layui-col-md3 layui-col-sm6 layui-col-xs6">
+        <div class="vip-card">
+            <a class="vip-card-content vip-box-shadow vip-workbench-tab" >
+                <div>工作台</div>
+                <i class="vip-icon">&#xe765;</i>
+            </a>
+        </div>
+    </div>
+
+</script>
+
+<!-- 统计.2 TPL -->
+<script type="text/html" id="count2Tpl">
+    {{# layui.each(d.list, function(index, item){ }}
+    {{# if(index>5){return ;} }}
+    <div class="layui-col-md2 layui-col-sm4 layui-col-xs6">
+        <div class="vip-chart bg-light">
+            <div class="vip-chart-content">
+                <h5 class="layui-elip">{{ item.title }}</h5>
+                <h2 class="layui-elip">{{ item.count }}</h2>
+            </div>
+        </div>
+    </div>
+    {{# }) }}
+</script>
+
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../js/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../js/sparkline/jquery.sparkline.min.js"></script>
+<script type="text/javascript" src="../js/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="../js/echarts/theme/style.js"></script>
+<script type="text/javascript">
+    layui.config({base: '../js/'}).use(['app','layer','element'],function(){
+        var $ = layui.$
+        ,app = layui.app
+        ,element = layui.element
+        ,layer = layui.layer;
+
+        // 统计 1
+        app.ajaxTpl({
+            url: '../json/demo-count-1.json'
+            ,where: {}
+            ,tpl: '#countTpl'
+            ,el: '.vip-dashboard-count'
+            ,done: function(){
+                //console.log('count.1 is done');
+            }
+        });
+
+        // 统计 2
+        app.ajaxTpl({
+            url: '../json/demo-count-2.json'
+            ,where: {}
+            ,tpl: '#count2Tpl'
+            ,el: '.vip-dashboard-count-2'
+            ,done: function(){
+                //console.log('count.2 is done');
+            }
+        });
+
+        var chartProfit = echarts.init(document.getElementById("chart-profit"),'style');
+
+        var chartCake = echarts.init(document.getElementById("chart-cake"),'style');
+
+        // ibox
+        var sparkline1 = function(){
+            $("#sparkline1").sparkline([34, 43, 43, 35, 44, 32, 44, 52, 44, 32, 44, 52], {
+                type: 'line',
+                width: '99%',
+                height: '60',
+                spotRadius: 4,
+                lineWidth:1,
+                lineColor:'#ffffff',
+                fillColor: false,
+                minSpotColor :false,
+                maxSpotColor : false,
+                highlightLineColor : '#ffffff',
+                highlightSpotColor: '#ffffff',
+                tooltipChartTitle: '统计',
+                tooltipPrefix :'访问量:',
+                spotColor:'#ffffff',
+                valueSpots : {
+                    '0:': '#ffffff'
+                }
+            });
+        };
+
+        var sparkline2 = function(){
+            $("#sparkline2").sparkline([24, 43, 43, 55, 44, 62, 44], {
+                type: 'line',
+                width: '99%',
+                height: '60',
+                spotRadius: 4,
+                lineWidth:1,
+                lineColor:'#ffffff',
+                fillColor: false,
+                minSpotColor :false,
+                maxSpotColor : false,
+                highlightLineColor : '#ffffff',
+                highlightSpotColor: '#ffffff',
+                tooltipChartTitle: '统计',
+                tooltipPrefix :'访问量:',
+                spotColor:'#ffffff',
+                valueSpots : {
+                    '0:': '#ffffff'
+                }
+            });
+        };
+
+        var barEl = $("#sparkline3");
+        var barValues = [40,32,65,53,62,55,40,32,65,53];
+        var barValueCount = barValues.length;
+        var barSpacing = 1;
+        var sparkline3 = function(){
+            barEl.sparkline(barValues, {
+                type: 'bar',
+                height: 60,
+                barWidth: Math.round((barEl.parent().width() - ( barValueCount - 1 ) * barSpacing ) / barValueCount),
+                barSpacing: barSpacing,
+                zeroAxis: false,
+                tooltipChartTitle: '三天访问量',
+                tooltipSuffix: ' 人',
+                barColor: 'white'
+            });
+        };
+
+        var sparkline4 = function(){
+            $("#sparkline4").sparkline([24, 43, 33, 55, 64, 72, 44, 22], {
+                type: 'line',
+                width: '99%',
+                height: '60',
+                spotRadius: 4,
+                lineWidth:1,
+                lineColor:'#ffffff',
+                fillColor: false,
+                minSpotColor :false,
+                maxSpotColor : false,
+                highlightLineColor : '#ffffff',
+                highlightSpotColor: '#ffffff',
+                tooltipChartTitle: '统计',
+                tooltipPrefix :'时间:',
+                tooltipSuffix: ' s',
+                spotColor:'#ffffff',
+                valueSpots : {
+                    '0:': '#ffffff'
+                }
+            });
+        };
+
+
+        // 收益
+        function chart1(){
+            option = {
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:['订单量(单)','收益(元)']
+                },
+                series: [{
+                    name: '订单量(单)',
+                    data: [2, 3, 5, 2, 15, 2, 7],
+                    type: 'line',
+                    areaStyle: {},
+                    smooth: true
+                },{
+                    name: '收益(元)',
+                    data: [300, 400, 450, 600, 500, 700, 600],
+                    type: 'line',
+                    areaStyle: {},
+                    smooth: true
+                }]
+            };
+            if (option && typeof option === "object") {
+                chartProfit.setOption(option, true);
+            }
+        }
+
+        // 饼图
+        function chart2(){
+            option = {
+                /*title : {
+                 text: '浏览器访问对比',
+                 subtext: '纯属虚构',
+                 x:'center'
+                 },*/
+                tooltip : {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'right',
+                    data: ['IE','谷歌','360','QQ','其他']
+                },
+                default: {
+                    text: 'loading',
+                    color: '#c23531',
+                    textColor: '#000',
+                    maskColor: 'rgba(255, 255, 255, 0.8)',
+                    zlevel: 0
+                },
+                series : [
+                    {
+                        name: '访问来源',
+                        type: 'pie',
+                        radius : '80%',
+                        center: ['50%', '50%'],
+                        data:[
+                            {value:100, name:'IE'},
+                            {value:500, name:'谷歌'},
+                            {value:200, name:'360'},
+                            {value:120, name:'QQ'},
+                            {value:50, name:'其他'}
+                        ],
+                        itemStyle: {
+                            emphasis: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]
+            };
+            if (option && typeof option === "object") {
+                chartCake.setOption(option, true);
+            }
+        }
+
+        // 初始化方法
+        var init = function(){
+            sparkline1();
+            sparkline2();
+            sparkline3();
+            sparkline4();
+        };
+
+        // 子窗口点击按钮打开页面:方式一
+        $(document).on('click','[vip-href]',function(){
+            parent.appHref(this);
+        });
+
+        // 子窗口点击按钮打开页面:方式二 JS直接调用 appHrefApi(标题，url路径，是否新选项卡打开)
+        $(document).on('click','.vip-workbench-tab',function(){
+            parent.appHrefApi('工作台','workbench.html');
+        });
+
+        // 赋值-版本号/内置LAYUI版本
+        app.val(['.vip-version','.layui-version'],[app.version+' / '+app.updateTime,app.layVersion]);
+        //$('.vip-version').html(app.version+' / '+app.updateTime);
+        //$('.layui-version').html(app.layVersion);
+
+        // 监听框架变化
+        $(window).on('resize',function(){
+            chartProfit.resize();
+            chartCake.resize();
+            init();
+        });
+
+        init();
+
+        chart1();
+        chart2();
+
+    });
+</script>
+</body>
+</html>

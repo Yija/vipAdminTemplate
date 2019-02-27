@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>下拉多选</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="icon" href="../img/web/web.ico"/>
+    <link rel="stylesheet" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../css/app.css"/>
+<body ontouchstart="">
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+
+        <div class="layui-col-md3">
+            <div class="layui-card">
+                <div class="layui-card-header layui-elip">formSelects.js</div>
+                <div class="layui-card-body">一个基于layui扩展的select多选插件</div>
+            </div>
+        </div>
+        <div class="layui-col-md9">
+            <div class="layui-card">
+                <div class="layui-card-header layui-elip">下拉多选插件,手册: <a target="_blank" href="https://faysunshine.com/layui/template/index.html">https://faysunshine.com/layui/template/index.html</a></div>
+                <div class="layui-card-body">
+
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <select name="city" lay-filter="city">
+                                <option value=""></option>
+                                <option value="0" selected="selected">北京</option>
+                                <option value="1">上海</option>
+                                <option value="2">广州</option>
+                                <option value="3">深圳</option>
+                                <option value="4">杭州</option>
+                            </select>
+                        </div>
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-radius get-selects">获取选中数据</button>
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-radius set-selects">动态赋值</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript">
+layui.config({base: '../js/'}).use(['layer','form','formSelects'],function(){
+    var $ = layui.$, layer = layui.layer, form = layui.form, formSelects = layui.formSelects;
+
+    formSelects.selects({
+        name: 'select'
+        ,el: 'select[name=city]'
+        ,show: '#select-result'
+        ,model: 'select'
+        ,filter: 'city'
+        ,left: '['
+        ,right: ']'
+        ,separator: ','
+        ,reset: true
+        ,init: [0,2,4]
+        ,change: function(data, arr){
+            //console.log(data);    // layui中form.on的完整数据
+            //console.log(arr);     // 已选中的数据
+            var list = [];
+            $.each(arr,function(k,v){
+                list.push(v.val);
+            });
+            formSelects.value('select', list);	// 动态赋值
+        }
+    });
+
+    // 获取选中数据
+    $('.get-selects').on('click',function(){
+        layer.alert( JSON.stringify(formSelects.array('select')) );
+    });
+
+    // 动态赋值
+    $('.set-selects').on('click',function(){
+        formSelects.value('select', [1,3]);
+    });
+
+
+    //formSelects.array('select');		// 获取选中的值
+    //formSelects.value('select', [1,3]);	// 动态赋值
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "code": 0,
+  "msg": "请求成功",
+  "title": "JSON相册",
+  "start": 0,
+  "data": [
+    {
+      "alt": "相册",
+      "src": "./../img/background/01.jpg"
+    },
+    {
+      "alt": "相册",
+      "src": "./../img/background/02.jpg"
+    },
+    {
+      "alt": "相册",
+      "src": "./../img/background/03.jpg"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+.vip-nav, .vip-aside, .vip-aside:before, .vip-aside:after {
+    background-color: #009688;
+}
+
+.vip-nav ul li > i {
+    color: white !important;
+}
+
+.vip-nav ul li > i:hover, .vip-nav ul li > i.active {
+    border-left: 1px solid #FFF;
+}
+
+.vip-aside ul hr {
+    background-color: #FFF !important;
+}
+
+.vip-nav .vip-sub-nav, .vip-nav .vip-sub-nav-tips {
+    border-left: 2px solid #FF5722;
+}
+
+.vip-nav .vip-sub-nav:after, .vip-nav .vip-sub-nav-tips:after {
+    border-right: 10px solid #FF5722;
+}
+.vip-aside>ul li:hover, .vip-aside>ul li.active {
+    border-right: 2px solid #FF5722;
+}
+.vip-nav .vip-sub-nav .layui-card .layui-card-body span i:hover, .vip-nav .vip-sub-nav .layui-card .layui-card-body span i.active {
+    border: 2px solid #FF5722;
+    color: #FF5722;
+}
+.vip-nav .vip-sub-nav .layui-card .layui-card-body .layui-row>div:hover{
+    background-color: transparent;
+    color: #FF5722;
+}

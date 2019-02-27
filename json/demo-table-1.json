@@ -1,0 +1,87 @@
+{
+  "code": 0,
+  "msg": "获取成功",
+  "count": 10,
+  "data": [
+    {
+      "id": 1,
+      "account": "admin",
+      "auth_group_name": "超级管理员",
+      "credit": "98",
+      "nickname": "大白",
+      "status": "正常"
+    },
+    {
+      "id": 2,
+      "account": "root",
+      "auth_group_name": "普通管理员",
+      "credit": "80",
+      "nickname": "中白",
+      "status": "错误"
+    },
+    {
+      "id": 3,
+      "account": "123456",
+      "auth_group_name": "测试人员",
+      "credit": "95",
+      "nickname": "小白",
+      "status": "正常"
+    },
+    {
+      "id": 4,
+      "account": "654321",
+      "auth_group_name": "测试人员",
+      "credit": "75",
+      "nickname": "小白",
+      "status": "错误"
+    },
+    {
+      "id": 5,
+      "account": "test123",
+      "auth_group_name": "普通管理员",
+      "credit": "90",
+      "nickname": "小白",
+      "status": "正常"
+    },
+    {
+      "id": 6,
+      "account": "test456",
+      "auth_group_name": "测试人员",
+      "credit": "20",
+      "nickname": "中白",
+      "status": "错误"
+    },
+    {
+      "id": 7,
+      "account": "tes789",
+      "auth_group_name": "普通管理员",
+      "credit": "60",
+      "nickname": "小白",
+      "status": "正常"
+    },
+    {
+      "id": 8,
+      "account": "test321",
+      "auth_group_name": "测试人员",
+      "credit": "89",
+      "nickname": "小白",
+      "status": "错误"
+    },
+    {
+      "id": 9,
+      "account": "test654",
+      "auth_group_name": "测试人员",
+      "credit": "76",
+      "nickname": "小白",
+      "status": "正常"
+    },
+    {
+      "id": 10,
+      "account": "test987",
+      "auth_group_name": "测试人员",
+      "credit": "30",
+      "nickname": "中白",
+      "status": "正常"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>富文本</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="icon" href="../img/web/web.ico"/>
+    <link rel="stylesheet" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../css/app.css"/>
+<body ontouchstart="">
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header layui-elip">富文本 <a href="https://www.kancloud.cn/wangfupeng/wangeditor3/332599" target="_blank">手册:https://www.kancloud.cn/wangfupeng/wangeditor3/332599</a></div>
+                <div class="layui-card-body">
+                    <div id="vip-rich-text">
+                        <p>我只是编辑器的内容~~~</p>
+                    </div>
+                    <div class="layui-btn-container mar-top">
+                        <button class="layui-btn layui-btn-sm layui-btn-radius layui-btn-normal vip-demo-off">禁用</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-radius layui-btn-normal vip-demo-on">启用</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-radius layui-btn-normal vip-demo-get-html">获取HTML内容</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-radius layui-btn-normal vip-demo-get-text">获取TEXT内容</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-radius layui-btn-normal vip-demo-get-json">获取JSON内容</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/wangeditor/release/wangEditor.min.js"></script>
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript">
+layui.use('layer',function(){
+    var $ = layui.$,layer = layui.layer;
+
+    var E = window.wangEditor;
+    var editor = new E('#vip-rich-text');
+    editor.customConfig.uploadImgServer = '/upload';  // 上传图片到服务器
+    editor.create();
+
+    // 禁用
+    $('.vip-demo-off').on('click',function(){
+        editor.$textElem.attr('contenteditable', false)
+    });
+
+    // 启用
+    $('.vip-demo-on').on('click',function(){
+        editor.$textElem.attr('contenteditable', true)
+    });
+
+    // 获取内容-html
+    $('.vip-demo-get-html').on('click',function(){
+        layer.alert(editor.txt.html());
+    });
+
+    // 获取内容-text
+    $('.vip-demo-get-text').on('click',function(){
+        layer.alert(editor.txt.text());
+    });
+
+    // 获取内容-json
+    $('.vip-demo-get-json').on('click',function(){
+        var json = editor.txt.getJSON();  // 获取 JSON 格式的内容
+        var jsonStr = JSON.stringify(json);
+        console.log(json);
+        layer.alert(jsonStr);
+    });
+
+});
+</script>
+</body>
+</html>

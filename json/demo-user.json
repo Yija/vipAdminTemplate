@@ -1,0 +1,75 @@
+{
+  "code": 0
+  ,"msg": "获取成功"
+  ,"list": [{
+    "nickname": "HELLO"
+    ,"avatar": "../img/user-photos/1.png"
+    ,"href": "btn.html"
+    ,"level": 1
+  },{
+    "nickname": "机器人"
+    ,"avatar": "../img/user-photos/1.png"
+    ,"href": "btn.html"
+    ,"level": 3
+    },{
+    "nickname": "WIKI"
+    ,"avatar": "../img/user-photos/3.png"
+    ,"href": "btn.html"
+    ,"level": 0
+  },{
+    "nickname": "MITULA"
+    ,"avatar": "../img/user-photos/4.png"
+    ,"href": "btn.html"
+    ,"level": 2
+  },{
+    "nickname": "KAHUBA"
+    ,"avatar": "../img/user-photos/3.png"
+    ,"href": "btn.html"
+    ,"level": 0
+  },{
+    "nickname": "LISHIWEI"
+    ,"avatar": "../img/user-photos/1.png"
+    ,"href": "btn.html"
+    ,"level": 3
+  },{
+    "nickname": "MONINI"
+    ,"avatar": "../img/user-photos/3.png"
+    ,"href": "btn.html"
+    ,"level": 1
+  },{
+    "nickname": "KAKALUBA"
+    ,"avatar": "../img/user-photos/3.png"
+    ,"href": "btn.html"
+    ,"level": 4
+  },{
+    "nickname": "NIXIXIKA"
+    ,"avatar": "../img/user-photos/1.png"
+    ,"href": "btn.html"
+    ,"level": 2
+  },{
+    "nickname": "WUHABA"
+    ,"avatar": "../img/user-photos/2.png"
+    ,"href": "btn.html"
+    ,"level": 0
+  },{
+    "nickname": "KOLUX"
+    ,"avatar": "../img/user-photos/3.png"
+    ,"href": "btn.html"
+    ,"level": 1
+  },{
+    "nickname": "HELLO"
+    ,"avatar": "../img/user-photos/2.png"
+    ,"href": "btn.html"
+    ,"level": 1
+  },{
+    "nickname": "MITA"
+    ,"avatar": "../img/user-photos/1.png"
+    ,"href": "btn.html"
+    ,"level": 4
+  },{
+    "nickname": "LUXI"
+    ,"avatar": "../img/user-photos/4.png"
+    ,"href": "btn.html"
+    ,"level": 0
+  }]
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="icon" href="../img/web/web.ico"/>
+    <link rel="stylesheet" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../css/app.css"/>
+<body ontouchstart="">
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-row layui-col-space15">
+
+                <div class="layui-col-md3">
+                    <div class="layui-card">
+                        <div class="layui-card-header">左侧树结构</div>
+                        <div class="layui-card-body user-select" id="demo-tree"></div>
+                    </div>
+                </div>
+                <div class="layui-col-md9">
+                    <div class="layui-card">
+                        <div class="layui-card-header">右侧表结构</div>
+                        <div class="layui-card-body">
+                            <div id="demo-table-1"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript">
+    layui.config({base: '../js/'}).use(['table', 'layer','vipTree'], function () {
+        var $ = layui.$, table = layui.table, layer = layui.layer, vipTree = layui.vipTree;
+
+        // 请求
+        $.post('../json/demo-data-tree.json',{},function(res){
+            if(res.code == 0){
+                // 渲染
+                vipTree.render($("#demo-tree"),{
+                    arr: res.list,
+                    simIcon: "&#xe67a;",            // 单个标题字体图标
+                    mouIconOpen: "&#xe683;",        // 含多个标题的打开字体图标
+                    mouIconClose: "&#xe67c;",       // 含多个标题的关闭的字体图标
+                    callback: function (id, name) {
+                        layer.msg("id:" + id + "，名字:" + name);
+                        table.reload('table-id-1', {});
+                    }
+                });
+            }
+        });
+
+        // 表格渲染
+        table.render({
+            elem: '#demo-table-1'
+            , id: 'table-id-1'
+            , url: '../json/demo-table-1.json'  //数据接口
+            , page: true                        // 开启分页
+            , loading: true                     // 开启loading
+            , cellMinWidth: 80                  // 每列最小宽度
+            , limits: [15, 30, 50]              // 每页条数的选择项
+            , limit: 15                         // 默认每页条数
+            , cols: [[                          //表头
+                {type: 'checkbox', fixed: 'left'}
+                , {field: 'id', title: 'ID', sort: true}
+                , {field: 'account', title: '用户名'}
+                , {field: 'auth_group_name', title: '权限组'}
+                , {field: 'credit', title: '信用'}
+                , {field: 'nickname', title: '昵称'}
+                , {field: 'status', title: '状态'}
+            ]]
+        });
+
+    });
+</script>
+</body>
+</html>

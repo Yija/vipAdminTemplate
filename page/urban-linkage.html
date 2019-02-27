@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>城市三级联动</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="icon" href="../img/web/web.ico"/>
+    <link rel="stylesheet" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../css/app.css"/>
+<body ontouchstart="">
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+
+        <div class="layui-col-md3">
+            <div class="layui-card">
+                <div class="layui-card-header layui-elip">多级级联动</div>
+                <div class="layui-card-body">一个基于layui扩展的多级联动插件,适用于(多级联动选择丶城市联动选择)</div>
+            </div>
+        </div>
+        <div class="layui-col-md9">
+            <div class="layui-card">
+                <div class="layui-card-header layui-elip">三级联动插件,手册: <a target="_blank" href="http://fly.layui.com/jie/25784">http://fly.layui.com/jie/25784</a></div>
+                <div class="layui-card-body">
+
+                    <form class="layui-form layui-form-pane">
+                        <div class="layui-form-item" id="mySelect">
+                            <label class="layui-form-label">选择地区</label>
+                        </div>
+                    </form>
+
+                    <!--<div class="layui-row layui-col-space15">
+                        <div class="layui-col-md6">内容2-1</div>
+                        <div class="layui-col-md6">内容2-2</div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript">
+layui.config({base: '../js/'}).use(['layer','form'],function(){
+    var $ = layui.$, layer = layui.layer, form = layui.form;
+
+    // 无限级分类数据（json格式）
+    var categoryJson = [
+    {
+        "id": 1,
+        "name": "周边旅游",
+        "pid": 0,
+        "children": [{
+            "id": 7,
+            "name": "广州",
+            "pid": 1
+        }]
+    }, {
+        "id": 5,
+        "name": "国内旅游",
+        "pid": 0,
+        "children": [{
+            "id": 8,
+            "name": "华北地区",
+            "pid": 5,
+            "children": [{
+                "id": 9,
+                "name": "北京",
+                "pid": 8
+            }]
+        }]
+    }, {
+        "id": 6,
+        "name": "出境旅游",
+        "pid": 0,
+        "children": [{
+            "id": 10,
+            "name": "东南亚",
+            "pid": 6,
+            "children": [{
+                "id": 11,
+                "name": "马来西亚",
+                "pid": 10,
+                "children": [{
+                    "id": 20,
+                    "name": "沙巴",
+                    "pid": 11,
+                    "children": [{
+                        "id": 21,
+                        "name": "美人鱼岛",
+                        "pid": 20,
+                        "children": [{
+                            "id": 22,
+                            "name": "潜水",
+                            "pid": 21
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }];
+
+    // 创建一个Select
+    var createSelect = function(optionData){
+        var html = '';
+        html+= '<div class="layui-input-inline">';
+        html+= ' <select lay-filter="demo">';
+        html+= '  <option value="">请选择</option>';
+        for(var i=0;i<optionData.length;i++){
+            html+= '  <option value="'+optionData[i].id+'">'+optionData[i].name+'</option>';
+        }
+        html+= ' </select>';
+        html+= '</div>';
+        return html;
+    };
+
+    // 获取当前option的数据
+    var getOptionData = function(catData,optionIndex){
+        var item = catData;
+        for(var i=0;i<optionIndex.length;i++){
+            if('undefined' == typeof item[optionIndex[i]]){
+                item = null;
+                break;
+            }
+            else if('undefined' == typeof item[optionIndex[i]]['children']){
+                item = null;
+                break;
+            }
+            else{
+                item = item[optionIndex[i]]['children'];
+            }
+        }
+        return item;
+    };
+
+    // select容器ID
+    var $selectWrap = $('#mySelect');
+
+    // 默认选中值
+    var selected = [6,10];
+    // 没有默认值
+    //var selected = [];
+
+    // 创建顶级select
+    var html = createSelect(categoryJson);
+    $selectWrap.append(html);
+    var index=[];
+    for(var i=0;i<selected.length;i++){
+        // 设置最后一个select的选中值
+        $selectWrap.find('select:last').val(selected[i]);
+        // 获取该选中值的索引
+        var lastIndex = $selectWrap.find('select:last').get(0).selectedIndex-1;
+        index.push(lastIndex);
+        // 取出下级的选项值
+        var childItem = getOptionData(categoryJson,index);
+        // 下级选项值存在则创建select
+        if(childItem){
+            var html = createSelect(childItem);
+            $selectWrap.append(html);
+        }
+    }
+    form.render('select');
+
+    // 监听select
+    form.on('select(demo)',function(data){
+        var $thisItem = $(data.elem).parent();
+        // 移除后面的select
+        $thisItem.nextAll('div.layui-input-inline').remove();
+        var index=[];
+        // 获取所有select，取出选中项的值和索引
+        $thisItem.parent().find('select').each(function(){
+            index.push($(this).get(0).selectedIndex-1);
+        });
+
+        var childItem = getOptionData(categoryJson,index);
+
+        if(childItem){
+            var html = createSelect(childItem);
+            $selectWrap.append(html);
+            form.render('select');
+        }
+    });
+
+    // 监听提交
+    form.on('submit(demo1)', function(data){
+
+        var lastValue = $selectWrap.find('select:last').val();
+        console.log(lastValue);
+
+        if(lastValue==''){
+            layer.alert('请选择分类');
+            return false;
+        }
+
+        var pathValue =[];
+        $selectWrap.find('select').each(function(){
+            pathValue.push($(this).val());
+        });
+        console.log(pathValue.join(','));
+
+
+
+        data.field.selectName1 = pathValue.join(',');
+        data.field.selectName2 = lastValue;
+
+        console.log(data.field);
+        return false;
+    });
+
+});
+</script>
+</body>
+</html>

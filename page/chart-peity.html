@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="icon" href="../img/web/web.ico"/>
+    <link rel="stylesheet" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../css/app.css"/>
+<body ontouchstart="">
+
+<div class="layui-fluid">
+    <blockquote class="layui-elem-quote">
+        <h1>Peity</h1>
+        <div class="mar-top">peity是一个jQuery插件,手册:<a target="_blank" href="http://benpickles.github.io/peity/">http://benpickles.github.io/peity/</a></div>
+    </blockquote>
+    <div class="layui-row layui-col-space15">
+
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">饼状图</div>
+                <div class="layui-card-body">
+                    <table class="layui-table">
+                        <colgroup>
+                            <col width="50">
+                            <col width="200">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>效果</th>
+                            <th>代码</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><span class="pie">1/5</span></td>
+                            <td><code class="text-pink">&lt;span class="pie"&gt;1/5&lt;/span&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="pie">1/4</span></td>
+                            <td><code class="text-pink">&lt;span class="pie"&gt;1/4&lt;/span&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="pie">0.5/10</span></td>
+                            <td><code class="text-pink">&lt;span class="pie"&gt;0.5/10&lt;/span&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="pie">8/9</span></td>
+                            <td><code class="text-pink">&lt;span class="pie"&gt;8/9&lt;/span&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="pie">1/1</span></td>
+                            <td><code class="text-pink">&lt;span class="pie"&gt;1/1&lt;/span&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="pie">0/1</span></td>
+                            <td><code class="text-pink">&lt;span class="pie"&gt;0/1&lt;/span&gt;</code></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">线性图</div>
+                <div class="layui-card-body">
+                    <table class="layui-table">
+                        <colgroup>
+                            <col width="50">
+                            <col width="200">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>效果</th>
+                            <th>代码</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><span class="line">5,3,9,6,5,9,7,3,5,2</span></td>
+                            <td><code class="text-pink">&lt;span class="line"&gt;5,3,9,6,5,9,7,3,5,2&lt;/span&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="line">5,3,9,6,5,9,7,3,5,2</span></td>
+                            <td><code class="text-pink">&lt;span class="line"&gt;5,3,9,6,5,9,7,3,5,2&lt;/span&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="line">5,3,2,-1,-3,-2,2,3,5,2</span></td>
+                            <td><code class="text-pink">&lt;span class="line"&gt;5,3,2,-1,-3,-2,2,3,5,2&lt;/span&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="line">0,-3,-6,-4,-5,-4,-7,-3,-5,-2</span></td>
+                            <td><code class="text-pink">&lt;span class="line"&gt;0,-3,-6,-4,-5,-4,-7,-3,-5,-2&lt;/span&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="bar">5,3,9,6,5,9,7,3,5,2</span></td>
+                            <td><code class="text-pink">&lt;span class="line"&gt;5,3,9,6,5,9,7,3,5,2&lt;/span&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="bar">5,3,2,-1,-3,-2,2,3,5,2</span></td>
+                            <td><code class="text-pink">&lt;span class="line"&gt;5,3,2,-1,-3,-2,2,3,5,2&lt;/span&gt;</code></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../js/peity/peity.min.js"></script>
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript">
+layui.use('layer',function(){
+    var $ = layui.$;
+
+    $("span.pie").peity("pie", {fill: ["#1ab394", "#d7d7d7", "#ffffff"]}), $(".line").peity("line", {
+        fill: "#1ab394",
+        stroke: "#169c81"
+    }), $(".bar").peity("bar", {fill: ["#1ab394", "#d7d7d7"]}), $(".bar_dashboard").peity("bar", {
+        fill: ["#1ab394", "#d7d7d7"],
+        width: 100
+    });
+    var i = $(".updating-chart").peity("line", {fill: "#1ab394", stroke: "#169c81", width: 64});
+    setInterval(function () {
+        var t = Math.round(10 * Math.random()), a = i.text().split(",");
+        a.shift(), a.push(t), i.text(a.join(",")).change()
+    }, 1e3)
+
+});
+</script>
+</body>
+</html>

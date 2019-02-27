@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>百度 ECharts</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="icon" href="../img/web/web.ico"/>
+    <link rel="stylesheet" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../css/app.css"/>
+<body ontouchstart="">
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">柱状图</div>
+                <div class="layui-card-body">
+                    <div class="vip-demo-box" id="chart-1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">柱状图</div>
+                <div class="layui-card-body">
+                    <div class="vip-demo-box" id="chart-2"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">折线图</div>
+                <div class="layui-card-body">
+                    <div class="vip-demo-box" id="chart-3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">饼状图</div>
+                <div class="layui-card-body">
+                    <div class="vip-demo-box" id="chart-5"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">折线图</div>
+                <div class="layui-card-body">
+                    <div class="vip-demo-max-height-box" id="chart-4"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">雷达图</div>
+                <div class="layui-card-body">
+                    <div class="vip-demo-max-height-box" id="chart-6"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">漏斗图</div>
+                <div class="layui-card-body">
+                    <div class="vip-demo-box" id="chart-7"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">仪表盘</div>
+                <div class="layui-card-body">
+                    <div class="vip-demo-box" id="chart-8"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../js/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="../js/echarts/theme/style.js"></script>
+<script type="text/javascript">
+layui.use('layer',function(){
+    var $ = layui.$;
+
+    // chart 1
+    var chart1 = echarts.init(document.getElementById('chart-1'),'style');
+    option = {
+        color: ['#3398DB'],
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis : [
+            {
+                type : 'category',
+                data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                axisTick: {
+                    alignWithLabel: true
+                }
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'直接访问',
+                type:'bar',
+                barWidth: '60%',
+                data:[10, 52, 200, 334, 390, 330, 220]
+            }
+        ]
+    };
+    chart1.setOption(option);
+
+    // chart 2
+    var chart2 = echarts.init(document.getElementById('chart-2'),'style');
+    option = {
+        title: {
+            text: '世界人口总量',
+            subtext: '数据来自网络'
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            data: ['2011年', '2012年']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'value',
+            boundaryGap: [0, 0.01]
+        },
+        yAxis: {
+            type: 'category',
+            data: ['巴西','印尼','美国','印度','中国','世界人口(万)']
+        },
+        series: [
+            {
+                name: '2011年',
+                type: 'bar',
+                data: [18203, 23489, 29034, 104970, 131744, 630230]
+            },
+            {
+                name: '2012年',
+                type: 'bar',
+                data: [19325, 23438, 31000, 121594, 134141, 681807]
+            }
+        ]
+    };
+    chart2.setOption(option);
+
+    // chart 3
+    var chart3 = echarts.init(document.getElementById('chart-3'),'style');
+    option = {
+        title: {
+            text: '堆叠区域图'
+        },
+        tooltip : {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: '#6a7985'
+                }
+            }
+        },
+        legend: {
+            data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                data : ['周一','周二','周三','周四','周五','周六','周日']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'邮件营销',
+                type:'line',
+                stack: '总量',
+                areaStyle: {normal: {}},
+                data:[120, 132, 101, 134, 90, 230, 210]
+            },
+            {
+                name:'联盟广告',
+                type:'line',
+                stack: '总量',
+                areaStyle: {normal: {}},
+                data:[220, 182, 191, 234, 290, 330, 310]
+            },
+            {
+                name:'视频广告',
+                type:'line',
+                stack: '总量',
+                areaStyle: {normal: {}},
+                data:[150, 232, 201, 154, 190, 330, 410]
+            },
+            {
+                name:'直接访问',
+                type:'line',
+                stack: '总量',
+                areaStyle: {normal: {}},
+                data:[320, 332, 301, 334, 390, 330, 320]
+            },
+            {
+                name:'搜索引擎',
+                type:'line',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                areaStyle: {normal: {}},
+                data:[820, 932, 901, 934, 1290, 1330, 1320]
+            }
+        ]
+    };
+    chart3.setOption(option);
+
+    // chart 4
+    var chart4 = echarts.init(document.getElementById('chart-4'),'style');
+    var base = +new Date(1968, 9, 3);
+    var oneDay = 24 * 3600 * 1000;
+    var date = [];
+    var data = [Math.random() * 300];
+    for (var i = 1; i < 20000; i++) {
+        var now = new Date(base += oneDay);
+        date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
+        data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
+    }
+    option = {
+        tooltip: {
+            trigger: 'axis',
+            position: function (pt) {
+                return [pt[0], '10%'];
+            }
+        },
+        title: {
+            left: 'center',
+            text: '大数据量面积图',
+        },
+        toolbox: {
+            feature: {
+                dataZoom: {
+                    yAxisIndex: 'none'
+                },
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: date
+        },
+        yAxis: {
+            type: 'value',
+            boundaryGap: [0, '100%']
+        },
+        dataZoom: [{
+            type: 'inside',
+            start: 0,
+            end: 10
+        }, {
+            start: 0,
+            end: 10,
+            handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+            handleSize: '80%',
+            handleStyle: {
+                color: '#fff',
+                shadowBlur: 3,
+                shadowColor: 'rgba(0, 0, 0, 0.6)',
+                shadowOffsetX: 2,
+                shadowOffsetY: 2
+            }
+        }],
+        series: [
+            {
+                name:'模拟数据',
+                type:'line',
+                smooth:true,
+                symbol: 'none',
+                sampling: 'average',
+                itemStyle: {
+                    normal: {
+                        color: 'rgb(255, 70, 131)'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgb(255, 158, 68)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(255, 70, 131)'
+                        }])
+                    }
+                },
+                data: data
+            }
+        ]
+    };
+    chart4.setOption(option);
+
+    // chart 5
+    var chart5 = echarts.init(document.getElementById('chart-5'));
+    option = {
+        backgroundColor: '#2c343c',
+
+        title: {
+            text: '饼状图',
+            left: 'center',
+            top: 20,
+            textStyle: {
+                color: '#ccc'
+            }
+        },
+
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+
+        visualMap: {
+            show: false,
+            min: 80,
+            max: 600,
+            inRange: {
+                colorLightness: [0, 1]
+            }
+        },
+        series : [
+            {
+                name:'访问来源',
+                type:'pie',
+                radius : '55%',
+                center: ['50%', '50%'],
+                data:[
+                    {value:335, name:'直接访问'},
+                    {value:310, name:'邮件营销'},
+                    {value:274, name:'联盟广告'},
+                    {value:235, name:'视频广告'},
+                    {value:400, name:'搜索引擎'}
+                ].sort(function (a, b) { return a.value - b.value; }),
+                roseType: 'radius',
+                label: {
+                    normal: {
+                        textStyle: {
+                            color: 'rgba(255, 255, 255, 0.3)'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        lineStyle: {
+                            color: 'rgba(255, 255, 255, 0.3)'
+                        },
+                        smooth: 0.2,
+                        length: 10,
+                        length2: 20
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#c23531',
+                        shadowBlur: 200,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                },
+
+                animationType: 'scale',
+                animationEasing: 'elasticOut',
+                animationDelay: function (idx) {
+                    return Math.random() * 200;
+                }
+            }
+        ]
+    };
+    chart5.setOption(option);
+
+    // chart 6
+    var chart6 = echarts.init(document.getElementById('chart-6'));
+    option = {
+        title: {
+            text: '基础雷达图'
+        },
+        tooltip: {},
+        /*legend: {
+            data: ['预算分配', '实际开销']
+        },*/
+        radar: {
+            //shape: 'circle',
+            name: {
+                textStyle: {
+                    color: '#fff',
+                    backgroundColor: '#999',
+                    borderRadius: 3,
+                    padding: [3, 5]
+                }
+            },
+            indicator: [
+                { name: '销售', max: 6500},
+                { name: '管理', max: 16000},
+                { name: '信息技术', max: 30000},
+                { name: '客服', max: 38000},
+                { name: '研发', max: 52000},
+                { name: '市场', max: 25000}
+            ]
+        },
+        series: [{
+            name: '预算 vs 开销',
+            type: 'radar',
+            // areaStyle: {normal: {}},
+            data : [
+                {
+                    value : [4300, 10000, 28000, 35000, 50000, 19000],
+                    name : '预算分配'
+                },
+                {
+                    value : [5000, 14000, 28000, 31000, 42000, 21000],
+                    name : '实际开销'
+                }
+            ]
+        }]
+    };
+    chart6.setOption(option);
+
+    // chart 7
+    var chart7 = echarts.init(document.getElementById('chart-7'));
+    option = {
+        title: {
+            text: '漏斗图',
+            subtext: '纯属虚构'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c}%"
+        },
+        toolbox: {
+            feature: {
+                dataView: {readOnly: false},
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        legend: {
+            data: ['展现','点击','访问','咨询','订单']
+        },
+        series: [
+            {
+                name: '预期',
+                type: 'funnel',
+                left: '10%',
+                width: '80%',
+                label: {
+                    normal: {
+                        formatter: '{b}预期'
+                    },
+                    emphasis: {
+                        position:'inside',
+                        formatter: '{b}预期: {c}%'
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        opacity: 0.7
+                    }
+                },
+                data: [
+                    {value: 60, name: '访问'},
+                    {value: 40, name: '咨询'},
+                    {value: 20, name: '订单'},
+                    {value: 80, name: '点击'},
+                    {value: 100, name: '展现'}
+                ]
+            },
+            {
+                name: '实际',
+                type: 'funnel',
+                left: '10%',
+                width: '80%',
+                maxSize: '80%',
+                label: {
+                    normal: {
+                        position: 'inside',
+                        formatter: '{c}%',
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    },
+                    emphasis: {
+                        position:'inside',
+                        formatter: '{b}实际: {c}%'
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        opacity: 0.5,
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }
+                },
+                data: [
+                    {value: 30, name: '访问'},
+                    {value: 10, name: '咨询'},
+                    {value: 5, name: '订单'},
+                    {value: 50, name: '点击'},
+                    {value: 80, name: '展现'}
+                ]
+            }
+        ]
+    };
+    chart7.setOption(option);
+
+    // chart 8
+    var chart8 = echarts.init(document.getElementById('chart-8'));
+    option = {
+        tooltip : {
+            formatter: "{a} <br/>{b} : {c}%"
+        },
+        toolbox: {
+            feature: {
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        series: [
+            {
+                name: '业务指标',
+                type: 'gauge',
+                detail: {formatter:'{value}%'},
+                data: [{value: 50, name: '完成率'}]
+            }
+        ]
+    };
+    chart8.setOption(option);
+    setInterval(function () {
+        option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+        chart8.setOption(option, true);
+    },2000);
+
+
+});
+</script>
+</body>
+</html>

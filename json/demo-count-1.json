@@ -1,0 +1,17 @@
+{
+  "code": 0
+  ,"msg": "获取成功"
+  ,"list": [{
+    "type": 1
+    ,"title": "注册量"
+    ,"count": "198,009"
+  },{
+    "type": 1
+    ,"title": "日活跃"
+    ,"count": "305"
+  },{
+    "type": 2
+    ,"img": "../img/user-photos/1.png"
+    ,"nickname": "admin"
+  }]
+}

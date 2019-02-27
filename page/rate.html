@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>评分</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="icon" href="../img/web/web.ico"/>
+    <link rel="stylesheet" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../css/app.css"/>
+<body ontouchstart="">
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md6">
+
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header layui-elip">基础</div>
+                        <div class="layui-card-body">
+                            <div id="rateBase"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header layui-elip">显示文字</div>
+                        <div class="layui-card-body">
+                            <div id="rateText"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header layui-elip">半星效果</div>
+                        <div class="layui-card-body">
+                            <div id="rateHalf1"></div>
+                            <br/>
+                            <div id="rateHalf2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header layui-elip">自定义内容</div>
+                        <div class="layui-card-body">
+                            <div id="rateCustom1"></div>
+                            <br/>
+                            <div id="rateCustom2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="layui-col-md6">
+
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header layui-elip">自定义长度</div>
+                        <div class="layui-card-body">
+                            <div id="rateCustomLength1"></div>
+                            <br/>
+                            <div id="rateCustomLength2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header layui-elip">自读</div>
+                        <div class="layui-card-body">
+                            <div id="rateReadonly"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header layui-elip">自定义主题色</div>
+                        <div class="layui-card-body">
+                            <div id="rateCustomTheme1"></div>
+                            <br/>
+                            <div id="rateCustomTheme2"></div>
+                            <br/>
+                            <div id="rateCustomTheme3"></div>
+                            <br/>
+                            <div id="rateCustomTheme4"></div>
+                            <br/>
+                            <div id="rateCustomTheme5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript">
+layui.use(['rate'],function(){
+    var $ = layui.$, rate = layui.rate;
+
+    // 渲染-基础
+    rate.render({
+        elem: '#rateBase'
+    });
+
+    //显示文字
+    rate.render({
+        elem: '#rateText'
+        ,value: 2       // 初始值
+        ,text: true     // 开启文本
+    });
+
+
+    // 半星效果1
+    rate.render({
+        elem: '#rateHalf1'
+        ,value: 2.5 // 初始值
+        ,half: true // 开启半星
+    });
+
+    // 半星效果1
+    rate.render({
+        elem: '#rateHalf2'
+        ,value: 3.5
+        ,half: true
+        ,text: true
+    });
+
+    // 自定义内容1
+    rate.render({
+        elem: '#rateCustom1'
+        ,value: 3
+        ,text: true
+        ,setText: function(value){ // 自定义文本的回调
+            var arrs = {
+                '1': '极差'
+                ,'2': '差'
+                ,'3': '中等'
+                ,'4': '好'
+                ,'5': '极好'
+            };
+            this.span.text(arrs[value] || ( value + "星"));
+        }
+    });
+
+    // 自定义内容2
+    rate.render({
+        elem: '#rateCustom2'
+        ,value: 1.5
+        ,half: true
+        ,text: true
+        ,setText: function(value){
+            this.span.text(value);
+        }
+    });
+
+    // 自定义长度1
+    rate.render({
+        elem: '#rateCustomLength1'
+        ,length: 3
+    });
+
+    // 自定义长度2
+    rate.render({
+        elem: '#rateCustomLength2'
+        ,length: 10
+        ,value: 8                   // 初始值
+    });
+
+    // 只读
+    rate.render({
+        elem: '#rateReadonly'
+        ,value: 4
+        ,readonly: true
+    });
+
+    // 主题色1
+    rate.render({
+        elem: '#rateCustomTheme1'
+        ,value: 3
+        ,theme: '#FF8000' // 自定义主题色
+    });
+
+    // 主题色2
+    rate.render({
+        elem: '#rateCustomTheme2'
+        ,value: 3
+        ,theme: '#009688'
+    });
+
+    // 主题色3
+    rate.render({
+        elem: '#rateCustomTheme3'
+        ,value: 2.5
+        ,half: true
+        ,theme: '#1E9FFF'
+    });
+
+    // 主题色4
+    rate.render({
+        elem: '#rateCustomTheme4'
+        ,value: 2.5
+        ,half: true
+        ,theme: '#2F4056'
+    });
+
+    // 主题色5
+    rate.render({
+        elem: '#rateCustomTheme5'
+        ,value: 2.5
+        ,half: true
+        ,theme: '#FE0000'
+    })
+
+});
+</script>
+</body>
+</html>

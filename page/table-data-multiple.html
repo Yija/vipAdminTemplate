@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>数据表格</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="icon" href="../img/web/web.ico"/>
+    <link rel="stylesheet" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../css/app.css"/>
+<body ontouchstart="">
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">多数据表格</div>
+                <div class="layui-card-body">
+
+                    <!--<div class="layui-row vip-btn-tool-box mar-btm">
+                        <div class="layui-col-sm12">
+                            <button class="layui-btn layui-btn-sm layui-bg-cyan" title="新增"><i class="vip-icon">&#xe65c;</i></button>
+                            <button class="layui-btn layui-btn-sm layui-bg-red" title="删除"><i class="vip-icon">&#xe664;</i></button>
+                        </div>
+                    </div>-->
+
+                    <div id="demo-table-1" lay-filter="table"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">多数据表格</div>
+                <div class="layui-card-body">
+                    <div id="demo-table-2" lay-filter="table"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">多数据表格</div>
+                <div class="layui-card-body">
+                    <div id="demo-table-3" lay-filter="table"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">多数据表格</div>
+                <div class="layui-card-body">
+                    <div id="demo-table-4" lay-filter="table"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript">
+    layui.use(['layer','table'],function(){
+        var $ = layui.$, layer = layui.layer, table = layui.table;
+
+        // 表格
+        table.render({
+            elem: '#demo-table-1'
+            ,id: 'table-id-1'
+            ,url: '../json/demo-table-1.json'   // 数据接口
+            ,page: true                         // 开启分页
+            ,skin: 'line'                       // 行边框风格
+            ,loading: true                      // 开启loading
+            ,cellMinWidth: 80                   // 每列最小宽度
+            ,limits: [15,30,50]                 // 每页条数的选择项
+            ,limit: 15                          // 默认每页条数
+            ,cols: [[                           // 表头
+                {type: 'checkbox', fixed: 'left'}
+                ,{field: 'id', title: 'ID', sort: true}
+                ,{field: 'account', title: '用户名'}
+                ,{field: 'auth_group_name', title: '权限组'}
+                ,{field: 'credit', title: '信用'}
+                ,{field: 'nickname', title: '昵称'}
+                ,{field: 'status', title: '状态'}
+            ]]
+        });
+
+        // 表格
+        table.render({
+            elem: '#demo-table-2'
+            ,id: 'table-id-2'
+            ,url: '../json/demo-table-1.json'   // 数据接口
+            ,page: true                         // 开启分页
+            ,skin: 'line'                       // 行边框风格
+            ,loading: true                      // 开启loading
+            ,cellMinWidth: 80                   // 每列最小宽度
+            ,limits: [15,30,50]                 // 每页条数的选择项
+            ,limit: 15                          // 默认每页条数
+            ,cols: [[                           // 表头
+                {type: 'checkbox', fixed: 'left'}
+                ,{field: 'id', title: 'ID', sort: true}
+                ,{field: 'account', title: '用户名'}
+                ,{field: 'auth_group_name', title: '权限组'}
+                ,{field: 'credit', title: '信用'}
+                ,{field: 'nickname', title: '昵称'}
+                ,{field: 'status', title: '状态'}
+            ]]
+        });
+
+        // 表格
+        table.render({
+            elem: '#demo-table-3'
+            ,id: 'table-id-3'
+            ,url: '../json/demo-table-1.json'   // 数据接口
+            ,page: true                         // 开启分页
+            ,skin: 'line'                       // 行边框风格
+            ,loading: true                      // 开启loading
+            ,cellMinWidth: 80                   // 每列最小宽度
+            ,limits: [15,30,50]                 // 每页条数的选择项
+            ,limit: 15                          // 默认每页条数
+            ,cols: [[                           // 表头
+                {type: 'checkbox', fixed: 'left'}
+                ,{field: 'id', title: 'ID', sort: true}
+                ,{field: 'account', title: '用户名'}
+                ,{field: 'auth_group_name', title: '权限组'}
+                ,{field: 'credit', title: '信用'}
+                ,{field: 'nickname', title: '昵称'}
+                ,{field: 'status', title: '状态'}
+            ]]
+        });
+
+        // 表格
+        table.render({
+            elem: '#demo-table-4'
+            ,id: 'table-id-4'
+            ,url: '../json/demo-table-1.json'   // 数据接口
+            ,page: true                         // 开启分页
+            ,skin: 'line'                       // 行边框风格
+            ,even: true                         // 开启隔行背景色
+            ,loading: true                      // 开启loading
+            ,cellMinWidth: 80                   // 每列最小宽度
+            ,limits: [15,30,50]                 // 每页条数的选择项
+            ,limit: 15                          // 默认每页条数
+            ,cols: [[                           // 表头
+                {type: 'checkbox', fixed: 'left'}
+                ,{field: 'id', title: 'ID', sort: true}
+                ,{field: 'account', title: '用户名'}
+                ,{field: 'auth_group_name', title: '权限组'}
+                ,{field: 'credit', title: '信用'}
+                ,{field: 'nickname', title: '昵称'}
+                ,{field: 'status', title: '状态'}
+            ]]
+        });
+
+    });
+</script>
+</body>
+</html>

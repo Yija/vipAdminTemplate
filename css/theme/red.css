@@ -1,0 +1,50 @@
+.vip-nav, .vip-aside, .vip-aside:before, .vip-aside:after {
+    background-color: #FF5722;
+}
+
+.vip-nav ul li > i {
+    color: white !important;
+}
+
+.vip-nav ul li > i:hover, .vip-nav ul li > i.active {
+    border-left: 1px solid #FFF;
+}
+
+.vip-aside ul hr {
+    background-color: #FFF !important;
+}
+.vip-aside>ul li:hover, .vip-aside>ul li.active {
+    border-right: 2px solid #FF5722;
+}
+.vip-aside>ul li:hover, .vip-aside>ul li.active {
+    border-right: 2px solid #3a444e;
+}
+.vip-nav .vip-sub-nav .layui-card .layui-card-body span i:hover, .vip-nav .vip-sub-nav .layui-card .layui-card-body span i.active {
+    border: 2px solid #3a444e;
+    color: #3a444e;
+}
+
+.vip-title:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -12px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    transform: skewX(-150deg);
+    background-color: #FFF;
+    border-bottom-left-radius: 3px;
+}
+.vip-title:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -12px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    transform: skewX(-210deg);
+    background-color: #FFF;
+    border-bottom-right-radius: 3px;
+}
