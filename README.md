@@ -5,3 +5,6 @@
 ![vipAdminTemplate](https://www.vip-admin.com/Pic/vipAdminTemplatePreview.jpg "vipAdminTemplate")
 
 >该模板请在apache或者IIS环境中访问,不然会存在Ajax请求出错
+
+[官网](https://www.vip-admin.com/)
+[预览](http://template.vip-admin.com/page/index.html)
